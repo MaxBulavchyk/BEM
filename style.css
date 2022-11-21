@@ -3,7 +3,7 @@
 }
 
 body {
-    margin: o;
+    margin: 0;
     font-family: 'Nunito Sans', sans-serif;
     background: #ebebeb;
 }
@@ -53,9 +53,28 @@ li {
     border: 0;
     display: inline-block;
     padding: 11px 15px;
-    background: #423f3e;
+    background: #100cff;
     border-radius: 5px;
     color: #fff;
+    cursor: pointer;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+@keyframes btn {
+    0% {
+        background-color: #100cff;
+        
+    }
+    50% {
+        background-color: orange;
+        
+    }
+    100% {
+        background-color: #100cff;
+        
+    }
 }
 
 .main-screen__title {
@@ -71,7 +90,7 @@ li {
     margin-inline: auto;
 }
 
-.main-screen__desk {
+.main-screen__desc {
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
@@ -86,7 +105,6 @@ li {
 .block { 
     display: flex;
     padding: 0 120px;
-    gap: 68px;
     margin-bottom: 100px;
 }
 
@@ -107,8 +125,10 @@ li {
 
 .info__body {
     display: flex;
-    gap: 50px;
-    align-items: center;
+}
+
+.info__item {
+    max-width: 275px;
 }
 
 .item {
@@ -132,19 +152,35 @@ li {
 }
 
 .image {
+    max-width: 534px;
+    width: 100%;
     flex: 0 1 35%;
-    background: #F5F5FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 534px;
-    min-height: 534px;
+    flex-shrink: 0;
+    background-color: orange; 
+    animation-name: anim;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+@keyframes anim {
+    0% {
+        background-color: orange;
+        transform: translateY(0);
+    }
+    50% {
+        background-color: blue;
+        transform: translateY(-20px);
+    }
+    100% {
+        background-color: orange;
+        transform: translateY(0);
+    }
 }
 
 .wrapper {
     display: flex;
+    justify-content: space-between;
     padding: 0 120px;
-    gap: 226px;
     margin-bottom: 145px;
 }
 
@@ -168,16 +204,14 @@ li {
     font-size: 18px;
     line-height: 28px;
     color: #2B2B2B;
-}
-
-.product-list {
-    display: flex;
-    gap: 80px;
+    text-align: left;
 }
 
 .product-list__ul {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    word-break: keep-all;
+    white-space: nowrap;
     gap: 16px;
 }
 
@@ -215,14 +249,14 @@ li {
     color: #2B2B2B;
 }
 
-.content-desk { 
+.content-desc { 
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 60px; 
 }
 
-.content-desk__pfoto {
+.content-desc__photo {
     flex: 0 1 33%;
     background: #F5F5FF;
     display: flex;
@@ -230,7 +264,7 @@ li {
     align-items: center;
 }
 
-.row {
+.row-container {
     padding: 0 240px;
     margin-bottom: 97px;
 }
@@ -243,12 +277,13 @@ li {
     margin-bottom: 81px;
 }
 
-.row__desk {
+.row__desc {
     display: flex;
     gap: 95px;
 }
 
 .row__content {
+    padding: 60px;
     background: #EBEBEB;
     box-shadow: 0px 0px 40px rgba(57, 40, 166, 0.15);
     border-radius: 5px;
@@ -279,9 +314,12 @@ li {
 .footer {
     padding: 0 86px 0 120px;
     display: flex;
-    gap: 969px;
+    justify-content: space-between;
 }
 
+.footer__content {
+    flex: 0 1 160px
+}
 
 .footer__title {
     font-weight: 700;
@@ -317,3 +355,4 @@ li {
     color: #2B2B2B;
     text-align: center;
 }
+ 
